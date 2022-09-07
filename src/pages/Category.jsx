@@ -11,6 +11,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { toast } from "react-toastify";
+import ListItem from "../components/ListItem";
 import Spinner from "../components/Spinner";
 
 const Category = () => {
@@ -54,6 +55,10 @@ const Category = () => {
 
     fetchListings();
   }, [params.categoryName]);
+
+  const onDelete = (id, name) => {
+    
+  }
   return (
     <div className="category">
       <header>
@@ -70,7 +75,12 @@ const Category = () => {
           <main>
             <ul className="categoryListings">
               {listings.map((listing) => (
-                <h3>{listing.data.name}</h3>
+                <ListItem
+                  key={listing.id}
+                  id={listing.id}
+                  listing={listing.data}
+                  onDelete={onDelete}
+                />
               ))}
             </ul>
           </main>
