@@ -41,7 +41,7 @@ const ForgotPassword = () => {
 
           <div className="signInBar">
             <div className="signInText">Send Reset Link</div>
-            <button className="signInButton">
+            <button type="submit" className="signInButton">
               <ArrowRightIcon fill="#fff" width="34px" height="34px" />
             </button>
           </div>
